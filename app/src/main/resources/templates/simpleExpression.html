@@ -26,5 +26,13 @@
   <h2>Message Expression</h2>
   <p th:text="#{channel.name}">Default Channel Name</p>
   <p th:text="#{project.name}">Default Project Name</p>
+
+  <h2>Line URL Expression</h2>
+  
+  <p><a href="#" th:href="@{/user/1}">Link 1</a></p>
+  <!--/user?id=1&name=Khine-->
+  <p><a href="#" th:href="@{/user(id=${person.id},name=${person.name})}">Query String URL</a></p>
+  <!--/user/1/name/Khine-->
+  <p><a href="#" th:href="@{/user/{uid}/name/{uname}(uid=${person.id},name=${person.name})}">Path Variable URL</a></p>
 </body>
 </html>
