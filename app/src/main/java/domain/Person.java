@@ -9,6 +9,10 @@ public class Person {
     public Person(){
         
     }
+    public Person(Integer id,String name){
+        this.id = id;
+        this.name = name;
+    }
 
     public Person(Integer id,String name,Address address){
         this.id = id;
