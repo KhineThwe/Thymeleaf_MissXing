@@ -1,6 +1,9 @@
 package com.tutorial.app.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +19,14 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmp")
-    public String saveEmp(@ModelAttribute("emp") Employee emp,RedirectAttributes ra){
+    public String saveEmp(@Valid @ModelAttribute("emp") Employee emp,BindingResult result,RedirectAttributes ra){
         //save to DB
+        if(result.hasErrors()){
+            System.out.print("Hey Error");
+            return "empForm";
+        }
         ra.addFlashAttribute("savedEmployee", emp);
+        System.out.print("Hey Error");
         return "redirect:/detail";
     }
 
