@@ -12,15 +12,15 @@ import domain.Person;
 
 @Controller
 public class IterationExpressionController {
-    @GetMapping("/iterationExpression")
-    public String iterationExpression(Model model){
-        List<Person> people = Arrays.asList(
-            new Person(91,"Josh"),
-            new Person(92,"Khine"),
-            new Person(93,"Zar")
-        );
-        model.addAttribute("people",people );
-        return "iterationExpression";
-    }
+    // @GetMapping("/iterationExpression")
+    // public String iterationExpression(Model model){
+    //     List<Person> people = Arrays.asList(
+    //         new Person(91,"Josh"),
+    //         new Person(92,"Khine"),
+    //         new Person(93,"Zar")
+    //     );
+    //     model.addAttribute("people",people );
+    //     return "iterationExpression";
+    // }
 
 }
